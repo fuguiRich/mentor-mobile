@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC",
+    "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  --font-serif:
+    "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC",
+    "Source Han Serif CN", "Songti SC", STSong, SimSun, Georgia,
+    "Times New Roman", serif;
+
+  --color-brand-50: #f1f6f7;
+  --color-brand-100: #e2edef;
+  --color-brand-200: #c4dbdf;
+  --color-brand-300: #9dc2c9;
+  --color-brand-400: #6d9fa9;
+  --color-brand-500: #3f7c89;
+  --color-brand-600: #1b5e6b;
+  --color-brand-700: #154c57;
+  --color-brand-800: #113c45;
+  --color-brand-900: #0c2c33;
+
+  --color-gold: #b08d57;
+  --color-accent: #8a6a2f;
+  --color-canvas: #f7f5f0;
+  --color-ink: #28323f;
+  --color-muted: #5b6775;
+  --color-line: #e3ded4;
+  --color-success: #3f6e5a;
+  --color-warning: #8a6a2f;
+  --color-danger: #a23b3b;
+
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-card: 14px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled),
+[role='button']:not(:disabled) {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+}
+
+/* Keep Ant Design's compact controls at a comfortable touch target. */
+.ant-segmented-item {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-btn-sm {
+  min-height: 44px;
+}
+
+.ant-btn-sm.ant-btn-icon-only {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* App shell: phone width, centered on larger screens */
+.app-shell {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  background: var(--color-canvas);
+  box-shadow: 0 0 0 1px rgb(15 23 42 / 0.05);
+}
+
+/* Keep list content clear of the fixed bottom navigation */
+.page-content {
+  padding-bottom: calc(76px + env(safe-area-inset-bottom));
+}
+
+.pressable {
+  transition:
+    background-color 150ms ease,
+    opacity 150ms ease;
+}
+
+.pressable:active {
+  opacity: 0.82;
+}
+
+/* Hide scrollbars everywhere; touch, wheel and keyboard scrolling still work. */
+html,
+body,
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Explicit utility for horizontal chip rows (kept for intent clarity) */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
